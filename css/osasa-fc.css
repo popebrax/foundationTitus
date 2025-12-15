@@ -163,7 +163,7 @@
     margin-top: var(--spacing-2xl);
     padding: var(--spacing-xl);
     background: linear-gradient(135deg, rgba(21, 102, 40, 0.05) 0%, rgba(13, 74, 31, 0.05) 100%);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     border-left: 4px solid #156628;
 }
 
@@ -186,7 +186,7 @@
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
     background: var(--white);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     transition: all var(--transition-base);
 }
 
@@ -364,6 +364,8 @@
     font-size: var(--text-xl);
     color: var(--gray-900);
     margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 2;
 }
 
 .program-card > p {
@@ -371,6 +373,8 @@
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
     flex-grow: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .program-features {
@@ -380,6 +384,8 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
 }
 
 .program-features li {
@@ -455,7 +461,7 @@
     gap: var(--spacing-xs);
     padding: var(--spacing-md);
     background: var(--gray-50);
-    border-radius: var(--radius-md);
+    border-radius: 0;
     transition: all var(--transition-base);
 }
 
@@ -604,11 +610,105 @@
 }
 
 /* ===================================
+   FOUNDERS SECTION
+   =================================== */
+
+.founders {
+    padding: var(--spacing-6xl) 0;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.founders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-3xl);
+    margin-top: var(--spacing-4xl);
+}
+
+.founder-card {
+    padding: var(--spacing-3xl);
+    text-align: center;
+    transition: all 0.3s ease, transform 0.3s ease;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.founder-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(30, 60, 114, 0.2);
+}
+
+.founder-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: var(--spacing-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e3c72 0%, #156628 100%);
+    border-radius: 0;
+    font-size: 60px;
+    color: #ffffff;
+}
+
+.founder-card h3 {
+    font-size: var(--text-2xl);
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.founder-role {
+    font-size: var(--text-base);
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.founder-bio {
+    color: var(--gray-600);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+}
+
+.founder-links {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 60, 114, 0.1);
+    color: var(--primary-color);
+    border-radius: 0;
+    transition: all 0.3s ease;
+    font-size: var(--text-lg);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* ===================================
    CTA SECTION
    =================================== */
 
 .cta-section {
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-2xl) 0;
     background: linear-gradient(135deg, #156628 0%, #0d4a1f 50%, #156628 100%);
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
@@ -641,17 +741,17 @@
 }
 
 .cta-content {
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
-    padding: var(--spacing-4xl) var(--spacing-3xl);
+    padding: var(--spacing-2xl) var(--spacing-2xl);
     position: relative;
     z-index: 1;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-2xl);
+    border-radius: 0;
     box-shadow: 
         0 25px 80px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.3);
@@ -683,7 +783,7 @@
         transparent 50%, 
         rgba(255, 215, 0, 0.05) 100%);
     pointer-events: none;
-    border-radius: var(--radius-2xl);
+    border-radius: 0;
 }
 
 .cta-content > * {
@@ -692,9 +792,9 @@
 }
 
 .cta-content h2 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
     color: var(--white);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     text-shadow: 
         0 4px 20px rgba(0, 0, 0, 0.4),
         0 0 40px rgba(255, 215, 0, 0.3);
@@ -710,18 +810,18 @@
     bottom: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
+    width: 80px;
+    height: 3px;
     background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
-    border-radius: var(--radius-full);
+    border-radius: 0;
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
 .cta-content p {
-    font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
     color: rgba(255, 255, 255, 0.98);
-    margin-bottom: var(--spacing-3xl);
-    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+    margin-top: var(--spacing-lg);
     line-height: 1.8;
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     font-weight: 400;
@@ -732,15 +832,16 @@
 
 .cta-buttons {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: var(--spacing-lg);
 }
 
 .cta-buttons .btn {
-    min-width: 220px;
-    padding: 1.1rem 2.5rem;
-    font-size: var(--text-lg);
+    min-width: 160px;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--text-base);
     font-weight: 700;
     box-shadow: 
         0 10px 30px rgba(0, 0, 0, 0.3),
