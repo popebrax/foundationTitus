@@ -10,19 +10,28 @@
     padding: 80px 0 0 0; /* Top padding for header */
     margin-bottom: 0;
     padding-bottom: 0;
-    background: 
-        linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 100%),
-        linear-gradient(45deg, #1e3c72 25%, transparent 25%, transparent 75%, #1e3c72 75%),
-        linear-gradient(45deg, #1e3c72 25%, transparent 25%, transparent 75%, #1e3c72 75%),
-        radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-        linear-gradient(180deg, #156628 0%, #0d4a1f 100%);
-    background-size: 100% 100%, 60px 60px, 60px 60px, 100% 100%, 100% 100%;
-    background-position: 0 0, 0 0, 30px 30px, 0 0, 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     z-index: 1;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-bg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
 }
 
 .hero-overlay {
@@ -31,7 +40,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 30%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(to bottom, rgba(30, 60, 114, 0.75) 0%, rgba(30, 60, 114, 0.8) 30%, rgba(30, 60, 114, 0.85) 100%);
+    z-index: 1;
 }
 
 .page-hero-content {
@@ -43,6 +53,7 @@
     padding-top: calc(var(--spacing-xl) + 20px); /* Space for header */
     max-width: 800px;
     margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .page-title {
@@ -68,7 +79,7 @@
     padding: 0.5rem 1rem;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
-    border-radius: var(--radius-full);
+    border-radius: 0;
     font-size: var(--text-sm);
 }
 
@@ -124,7 +135,7 @@
     margin: 0 auto var(--spacing-lg);
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     color: var(--white);
-    border-radius: var(--radius-2xl);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +203,7 @@
 .about-visual img {
     width: 100%;
     height: auto;
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     box-shadow: var(--shadow-xl);
     object-fit: cover;
 }
@@ -205,7 +216,7 @@
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     color: var(--white);
     padding: var(--spacing-2xl);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     box-shadow: var(--shadow-lg);
 }
 
@@ -260,6 +271,37 @@
     transition: all var(--transition-base);
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.focus-area-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.focus-area-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.focus-area-image-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.7) 0%, rgba(30, 60, 114, 0.65) 100%);
+    z-index: 1;
 }
 
 .focus-area-icon {
@@ -268,13 +310,15 @@
     margin-bottom: var(--spacing-lg);
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%);
     color: var(--white);
-    border-radius: var(--radius-xl);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: var(--text-2xl);
     box-shadow: 0 8px 20px rgba(30, 60, 114, 0.2);
     transition: all var(--transition-base);
+    position: relative;
+    z-index: 2;
 }
 
 .focus-area-card:nth-child(2) .focus-area-icon {
@@ -302,6 +346,8 @@
     font-size: var(--text-xl);
     color: var(--gray-900);
     margin-bottom: var(--spacing-md);
+    position: relative;
+    z-index: 2;
 }
 
 .focus-area-card > p {
@@ -309,6 +355,8 @@
     line-height: 1.8;
     margin-bottom: var(--spacing-lg);
     flex-grow: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .focus-features {
@@ -318,6 +366,8 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    position: relative;
+    z-index: 2;
 }
 
 .focus-features li {
