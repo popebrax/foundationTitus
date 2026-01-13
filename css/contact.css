@@ -238,3 +238,41 @@
         height: 400px;
     }
 }
+
+.direct-contacts {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid var(--gray-200);
+}
+
+.direct-contacts h4 {
+    font-size: var(--text-xl);
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.mpesa-details {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.05), rgba(30, 60, 114, 0.1));
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.mpesa-details h4 {
+    font-size: var(--text-xl);
+    color: var(--primary-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.till-number {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    padding: var(--spacing-md);
+    background: var(--white);
+    border-radius: var(--radius-md);
+    display: inline-block;
+    box-shadow: var(--shadow-md);
+}

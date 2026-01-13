@@ -91,3 +91,26 @@
     color: #ffffff;
     transform: scale(1.1);
 }
+
+.founder-contact {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: 100%;
+}
+
+.founder-contact p {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--text-sm);
+    color: var(--gray-600);
+    margin-bottom: var(--spacing-sm);
+}
+
+.founder-contact i {
+    color: var(--primary-color);
+    width: 16px;
+    text-align: center;
+}
